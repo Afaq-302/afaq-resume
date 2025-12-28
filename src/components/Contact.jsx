@@ -67,7 +67,7 @@ export function Contact() {
 
     setIsSubmitting(true);
 
-    const accessKey = process.env.ACCESS_KEY;
+    const accessKey = process.env.NEXT_PUBLIC_ACCESS_KEY;
 
     try {
       if (!accessKey) {
