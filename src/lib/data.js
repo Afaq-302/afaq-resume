@@ -9,7 +9,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/afaqy",
   twitter: "https://twitter.com/afaq_302",
   headline: "I build fast, scalable MERN web apps & modern websites",
-  subheadline: "Transforming ideas into powerful digital experiences with React, Next.js, Node.js, and MongoDB. Let's build something amazing together.",
+  subheadline: "Transforming ideas into powerful digital experiences with MERN & AI. Let's build something amazing together.",
   bio: "I'm a passionate MERN Stack Developer with expertise in building full-stack web applications. I specialize in creating scalable, performant, and user-friendly solutions using modern technologies. With a strong foundation in both frontend and backend development, I deliver end-to-end solutions that drive business growth.",
   highlights: [
     "3+ years of professional experience",

@@ -67,19 +67,48 @@ export function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const accessKey = process.env.NEXT_PUBLIC_ACCESS_KEY;
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    try {
+      if (!accessKey) {
+        throw new Error("Contact form is not configured. Missing access key.");
+      }
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          ...formData,
+        }),
+      });
 
-    setTimeout(() => setIsSuccess(false), 3000);
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const errorMessage =
+          errorData?.message || errorData?.error || "Failed to send message. Please try again.";
+        throw new Error(errorMessage);
+      }
+
+      setIsSuccess(true);
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      toast({
+        title: "Something went wrong",
+        description: error.message || "Unable to send your message right now. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setIsSuccess(false), 3000);
+    }
   };
 
   return (
