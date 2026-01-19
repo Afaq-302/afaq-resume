@@ -1,4 +1,4 @@
-// Portfolio Configuration Data
+
 export const personalInfo = {
   name: "Afaq Ahmad",
   role: "MERN Stack Developer",
@@ -85,98 +85,161 @@ export const skills = {
   ],
 };
 
+import Unit from "../../public/unit.png";
+import Time from "../../public/time.png";
+
+// ✅ New imports for other projects
+import FileQuill from "../../public/filequil.png";
+import PakDraw from "../../public/pakdraw.png";
+import Invoice from "../../public/invoice.png";
+import Maahir from "../../public/maahir.png";
+import Pi from "../../public/pi.png";
+import JobMarkaz from "../../public/jobmarkaz.png";
+import CX from "../../public/cx.png";
+import Portal from "../../public/portal.png";
+
 export const projects = [
   {
     id: 1,
-    title: "Group Ticketing Portal",
-    description: "Streamlined group ticket management system for agents to track, assign, and resolve support requests efficiently. (Demo Login: a@gmail.com / 1..9)",
+    title: "Time Tracker",
+    image: Time,
+    description:
+      "Track work hours, manage tasks, and generate daily/weekly summaries to improve productivity and simplify reporting.",
     tech: ["Next.js", "Tailwind CSS", "Prisma", "MongoDB", "REST API"],
-    demo: "https://agents-portal.vercel.app/",
+    demo: "https://time-tracker-by-afaq.vercel.app/",
     github: null,
     category: ["next", "fullstack"],
     featured: true,
   },
+
   {
     id: 2,
-    title: "JobMarkaz",
-    description: "Verified job listings across Pakistan with direct HR contact for faster applications.",
-    tech: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB", "REST API"],
-    demo: "https://job-markaz-pk.vercel.app/",
+    title: "Group Ticketing Portal",
+    image: Portal,
+    description:
+      "Agent-friendly support portal to assign, track, and resolve tickets faster with organized workflows and clear status updates. (Demo Login: a@gmail.com / 1..9)",
+    tech: ["Next.js", "Tailwind CSS", "Prisma", "MongoDB", "REST API"],
+    demo: "https://group-ticket.vercel.app/",
     github: null,
     category: ["next", "fullstack"],
     featured: true,
   },
+
   {
     id: 3,
+    title: "JobMarkaz",
+    image: JobMarkaz,
+    description:
+      "Verified job board for Pakistan with direct HR contact details, helping candidates apply quickly and confidently.",
+    tech: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB", "REST API"],
+    demo: "https://jobs-markaz.vercel.app/",
+    github: null,
+    category: ["next", "fullstack"],
+    featured: true,
+  },
+
+  {
+    id: 4,
     title: "File Quill",
-    description: "Privacy-first PDF platform to convert, merge, split, compress, and protect files efficiently.",
-    tech: ["Next.js", "Tailwind CSS", "Node.js", "Prisma", "PostgreSQL", "Redis", "S3", "Docker"],
+    image: FileQuill,
+    description:
+      "All-in-one PDF toolkit to convert, merge, split, compress, and secure files with a fast, privacy-first workflow.",
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "S3",
+      "Docker",
+    ],
     demo: "https://www.filequill.com/",
     github: null,
     category: ["next", "fullstack"],
     featured: true,
   },
+
   {
-    id: 4,
+    id: 5,
     title: "Connextar (UK) Official Website",
-    description: "Corporate showcase site highlighting Connextar's services, expertise, and client projects.",
+    image: CX,
+    description:
+      "Modern corporate website presenting Connextar’s services and portfolio with responsive pages and lead-generation contact forms.",
     tech: ["Next.js", "Tailwind CSS", "Email Forms", "Adobe XD"],
     demo: "https://www.connextar.com",
     github: null,
     category: ["next"],
     featured: false,
   },
-  {
-    id: 5,
-    title: "Masjid App Suite",
-    description: "Comprehensive mosque management platform for prayer schedules, donations, and community updates.",
-    tech: ["React", "Tailwind CSS", "Node.js", "Stripe", "MongoDB"],
-    demo: "https://mas.umairshah.dev",
-    github: null,
-    category: ["react", "fullstack"],
-    featured: true,
-  },
+
   {
     id: 6,
-    title: "POKERPLY",
-    description: "Telegram-based multiplayer poker platform with real-time rooms, betting, and leaderboard ranking.",
-    tech: ["React", "Tailwind CSS", "Node.js", "WebSockets", "APIs"],
-    demo: "https://pokerply.vercel.app/",
+    title: "Invoice Generator",
+    image: Invoice,
+    description:
+      "Create clean, professional invoices in minutes with itemized billing, totals calculation, and easy export/sharing.",
+    tech: ["React", "Tailwind CSS", "Node.js", "APIs"],
+    demo: null,
     github: null,
     category: ["react", "fullstack"],
     featured: false,
   },
+
   {
     id: 7,
-    title: "Pak Draw",
-    description: "Quick raffle and lucky draw generator that picks random winners from uploaded lists.",
+    title: "Maahir - Expert Hiring Platform",
+    image: Maahir,
+    description:
+      "Service marketplace concept that connects customers with skilled professionals, featuring a clean UI and smooth browsing experience.",
+    tech: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+    demo: null,
+    github: null,
+    category: ["next", "fullstack"],
+    featured: false,
+  },
+
+  {
+    id: 8,
+    title: "Pak Draw Lottery App",
+    image: PakDraw,
+    description:
+      "Lucky draw generator to upload participant lists, pick random winners instantly, and display results in a simple interface.",
     tech: ["React", "Tailwind CSS", "Node.js", "APIs"],
-    demo: "https://pakdraw.vercel.app/",
+    demo: "https://pak-draw.vercel.app/",
     github: null,
     category: ["react", "fullstack"],
     featured: false,
   },
-  {
-    id: 8,
-    title: "Facebook Clone",
-    description: "Interactive Facebook-style social feed with posts, comments, and friend suggestions.",
-    tech: ["React", "Tailwind CSS", "UI/UX", "Responsive"],
-    demo: "https://facebook-clone-by-afaq.vercel.app/",
-    github: null,
-    category: ["react"],
-    featured: false,
-  },
+
   {
     id: 9,
-    title: "YouTube Clone",
-    description: "Responsive YouTube homepage replica with video player, search, and sidebar navigation.",
-    tech: ["React", "Tailwind CSS", "UI/UX", "Responsive"],
-    demo: "https://youtube-clone-by-afaq.vercel.app/",
+    title: "Pi-Exchange Platform",
+    image: Pi,
+    description:
+      "Lightweight Next.js project built with a minimal layout, responsive design, and smooth user experience as a modern UI template.",
+    tech: ["Next.js", "Tailwind CSS"],
+    demo: null,
     github: null,
-    category: ["react"],
+    category: ["next"],
+    featured: false,
+  },
+
+  // ✅ NOTE: you had duplicate id: 9 — changed this to 10 (recommended)
+  {
+    id: 10,
+    title: "Unit Converter",
+    image: Unit,
+    description:
+      "Quick unit conversion tool for common measurements with instant results and a clean, mobile-friendly interface.",
+    tech: ["Next.js", "Tailwind CSS"],
+    demo: null,
+    github: null,
+    category: ["next"],
     featured: false,
   },
 ];
+
 
 export const services = [
   {

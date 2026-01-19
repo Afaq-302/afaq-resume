@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ExternalLink, Github, Lock } from "lucide-react";
 import { Button } from "./ui/button";
 import { projects } from "@/lib/data";
+import Image from "next/image";
 
 const filters = [
   { label: "All Projects", value: "all" },
@@ -57,21 +58,40 @@ export function Projects() {
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {/* Project Image/Preview */}
-              <div className="relative h-48 bg-secondary/50 overflow-hidden">
+              <div className="relative h-60 overflow-hidden bg-secondary/50">
+                {/* Image */}
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    priority={project.featured}
+                  />
+                ) : null}
+
+                {/* Overlay + Fallback content */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-2xl bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-primary">
-                        {project.title.charAt(0)}
+
+                {/* Show fallback ONLY if no image provided */}
+                {!project.image && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center p-4">
+                      <div className="w-20 h-20 mx-auto mb-3 rounded-2xl bg-primary/10 flex items-center justify-center">
+                        <span className="text-2xl font-bold text-primary">
+                          {project.title.charAt(0)}
+                        </span>
+                      </div>
+                      <span className="text-xs font-mono text-muted-foreground">
+                        {project.category.includes("fullstack")
+                          ? "Full-Stack"
+                          : project.category[0]?.toUpperCase()}
                       </span>
                     </div>
-                    <span className="text-xs font-mono text-muted-foreground">
-                      {project.category.includes("fullstack") ? "Full-Stack" : project.category[0]?.toUpperCase()}
-                    </span>
                   </div>
-                </div>
-                
+                )}
+
                 {/* Featured badge */}
                 {project.featured && (
                   <div className="absolute top-3 right-3">
@@ -120,6 +140,7 @@ export function Projects() {
                       Live Demo
                     </a>
                   </Button>
+
                   {project.github ? (
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -142,6 +163,7 @@ export function Projects() {
             </div>
           ))}
         </div>
+
 
         {/* View More CTA */}
         <div className="text-center mt-12">
